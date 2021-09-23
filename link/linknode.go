@@ -1,13 +1,13 @@
-package list
+package link
 
 import "fmt"
 
-type ListNode struct {
+type LinkNode struct {
 	Value int
-	Next  *ListNode
+	Next  *LinkNode
 }
 
-func (m *ListNode) String() (res string) {
+func (m *LinkNode) String() (res string) {
 	res = fmt.Sprintf("%d", m.Value)
 	for m.Next != nil {
 		m = m.Next
@@ -16,18 +16,18 @@ func (m *ListNode) String() (res string) {
 	return
 }
 
-func (m *ListNode) Append(v int) {
+func (m *LinkNode) Append(v int) {
 	for m.Next != nil {
 		m = m.Next
 	}
-	m.Next = &ListNode{
+	m.Next = &LinkNode{
 		Value: v,
 	}
 }
 
-func (m *ListNode) Unshift(v int) {
+func (m *LinkNode) Unshift(v int) {
 	old := *m
-	*m = ListNode{
+	*m = LinkNode{
 		Value: v,
 	}
 	(*m).Next = &old

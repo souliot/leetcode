@@ -1,8 +1,8 @@
-package list
+package link
 
-func Reverse(head *ListNode) (r *ListNode) {
+func Reverse(head *LinkNode) (r *LinkNode) {
 	cur := head
-	var prev *ListNode
+	var prev *LinkNode
 	for cur != nil {
 		prev, cur, cur.Next = cur, cur.Next, prev
 	}
